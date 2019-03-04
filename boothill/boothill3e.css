@@ -1,0 +1,338 @@
+.charsheet {
+	  min-width: 800px;
+	}
+	
+
+	.sheet-section-header {
+	  margin-bottom: 4px;
+	  padding: 2px 4px;
+	  text-align: center;
+	  background: black;
+	  color: white;
+	  font-weight: bold;
+	  font-size: 1.5em;
+	}
+	
+
+	
+
+	/* ==== Circles ==== */
+	div.sheet-circle-border {
+	  width: 7em;
+	  height: 7em;
+	  display: inline-block;
+	  text-align: center;
+	  border-radius: 50%;
+	  border: 2px solid black;
+	  margin-left: 10px;
+	  margin-right: 10px;
+	}
+	
+
+	.sheet-circle-border .sheet-circle-inner {
+	  color:#eee;
+	  padding-top: 15px;
+	}
+	
+
+	.sheet-circle-inner label.sheet-circle-inner-label {
+	  text-align: center;
+	  font-size: 0.7em;
+	  padding-right: 0px;
+	  margin-bottom: 0px;
+	}
+	/* ==== Circles ==== */
+	
+
+	
+
+	/* ==== Select Styling ==== */
+	select.sheet-vehicle-select,
+	select.sheet-character-select {
+	  display: inline-block;
+	  width: 175px;
+	}
+	
+
+	select.sheet-wound-status-select {
+	  display: inline-block;
+	  width: 140px;
+	}
+	/* ==== Select Styling ==== */
+	
+
+	
+
+	/* ==== Checkbox styles as a lock ==== */
+	/* Hide actual checkbox */
+	input.sheet-vehicle-lock,
+	input.sheet-character-type-lock
+	{
+	  opacity: 0;
+	  position: relative;
+	  left: 10px;
+	  cursor: pointer;
+	  z-index: 1;
+	}
+	
+
+	/* Fake checkbox */
+	input.sheet-vehicle-lock + span::before,
+	input.sheet-character-type-lock + span::before
+	{
+	  line-height: 16px;
+	  text-align: center;
+	  display: inline-block;
+	  vertical-align: middle;
+	  font-family: 'Pictos';
+	  content: "(";
+	  font-size: 16px;
+	}
+	
+
+	input.sheet-vehicle-lock:checked + span::before,
+	input.sheet-character-type-lock:checked + span::before
+	{
+	  font-family: 'Pictos';
+	  content: ")";
+	}
+	
+
+	/* Enable/Disable manipulation of select */
+	input.sheet-vehicle-lock:not(:checked) ~ select.sheet-vehicle-select,
+	input.sheet-character-type-lock:not(:checked) ~ select.sheet-character-select
+	{
+	  pointer-events: none;
+	}
+	/* ==== Checkbox styles as a lock ==== */
+	
+
+	
+
+	/* ==== Style Sheet Inputs ==== */
+	input.sheet-input-short
+	{
+	  width: 40px !important;
+	  text-align: right;
+	}
+	
+
+	input.sheet-input-medium
+	{
+	  width: 100px;
+	}
+	
+
+	input.sheet-input-long
+	{
+	  width: 180px;
+	}
+	
+
+	textarea.misc
+	{
+	  max-width: 180px;
+	  max-height: 180px;
+	  width: 180px;
+	  height: 180px;
+	  resize: none;
+	}
+	/* ==== Style Sheet Inputs ==== */
+	
+
+	
+
+	/* ==== Style Sheet Lables ==== */
+	label.sheet-armor-order
+	{
+	  display: inline-block;
+	  width: 10px;
+	  text-align: left;
+	  font-size: 0.8em;
+	  padding-right: 0px;
+	}
+	
+
+	label.sheet-vehicle-weapon-order
+	{
+	  display: inline-block;
+	  width: 10px;
+	  text-align: left;
+	  font-size: 0.8em;
+	  padding-right: 0px;
+	  margin-right: 30px;
+	}
+	
+
+	label.sheet-weapon-attributes
+	{
+	  display: inline-block;
+	  width: 40px;
+	  text-align: left;
+	  font-size: 0.8em;
+	  padding-right: 0px;
+	}
+	
+
+	label.sheet-character-attributes
+	{
+	  display: inline-block;
+	  width: 60px;
+	  text-align: left;
+	  font-size: 0.8em;
+	  padding-right: 0px;
+	}
+	
+
+	label.sheet-warning-long
+	{
+	  display: inline-block;
+	  width: 180px;
+	  text-align: left;
+	  font-size: 0.6em;
+	  color: red;
+	  padding-left: 15px;
+	}
+	
+
+	label.sheet-vehicle-attributes
+	{
+	  display: inline-block;
+	  width: 95px;
+	  text-align: left;
+	  font-size: 0.8em;
+	  padding-right: 0px;
+	}
+	
+
+	label.sheet-vehicle-attributes-long
+	{
+	  display: inline-block;
+	  width: 120px;
+	  text-align: left;
+	  font-size: 0.8em;
+	  padding-right: 0px;
+	}
+	
+
+	label.sheet-vehicle-attributes-short
+	{
+	  display: inline-block;
+	  width: 40px;
+	  text-align: left;
+	  font-size: 0.8em;
+	  padding-right: 0px;
+	}
+	
+
+	label.sheet-skill-name
+	{
+	  display: inline-block;
+	  width: 95px;
+	  text-align: left;
+	  font-size: 0.8em;
+	  padding-right: 0px;
+	}
+	
+
+	label.sheet-plus
+	{
+	  display: inline-block;
+	  width: 5px;
+	  text-align: center;
+	}
+	
+
+	.sheet-col strong.sheet-dee
+	{
+	  font-size: 1.1em;
+	  font-weight: bold;
+	  padding-left: 2px;
+	  padding-right: 5px;
+	}
+	/* ==== Style Sheet Lables ==== */
+	
+
+	
+
+	/* ==== Hide Sections ==== */
+	input.sheet-section-show-hide
+	{
+	  opacity: 0;
+	  width: 16px;
+	  height: 16px;
+	  position: relative;
+	  top: 1px;
+	  right: 15px;
+	  float: right;
+	  cursor: pointer;
+	  z-index: 1;
+	}
+	
+
+	input.sheet-section-show-hide + span::before
+	{
+	  float: right;
+	  line-height: 14px;
+	  text-align: center;
+	  display: inline-block;
+	  vertical-align: middle;
+	  font-family: "Pictos";
+	  content: "S";
+	  width: 16px;
+	  height: 16px;
+	  font-size: 20px;
+	  padding-bottom: 10px;
+	}
+	
+
+	input.sheet-section-show-hide:checked ~ div.sheet-section-body
+	{
+	  display: none;
+	}
+	/* ==== Hide Sections ==== */
+	
+
+	
+
+	/* ==== Roll Template ==== */
+	.sheet-rolltemplate-generic_roll table {
+	  width: 100%;
+	  border: 1px solid;
+	  color: black;
+	  font-size: 1em;
+	  font-family: "Helvetica Neue", Helvetica, sans-serif;
+	}
+	
+
+	.sheet-rolltemplate-generic_roll th {
+	  background-color: rgba(112, 32, 130,1);
+	  color: #ffffff;
+	  padding: 2px;
+	  border-bottom: 1px solid black;
+	  line-height: 1.6em;
+	  font-size: 1.2em;
+	}
+	
+
+	.sheet-rolltemplate-generic_roll .sheet-tcat {
+	  font-weight: bold;
+	}
+	
+
+	.sheet-rolltemplate-generic_roll td {
+	  padding: 5px;
+	  border-bottom: 1px solid black;
+	}
+	
+
+	.sheet-rolltemplate-generic_roll tr:nth-child(odd) {
+	  background-color: rgba(217, 217, 214,1);
+	}
+	
+
+	.sheet-rolltemplate-generic_roll tr:nth-child(even) {
+	  background-color: rgba(233, 233, 233,1);
+	}
+	/* ==== Roll Template ==== */
+

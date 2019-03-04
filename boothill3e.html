@@ -1,0 +1,848 @@
+<div>
+	  <div class="sheet-section-header">COWBOYS AND COWGIRLS</div>
+	  <input type="checkbox" class="sheet-section-show-hide" name="attr_HideCharacterDisplay"/><span></span><br/>
+	  <div class="sheet-section-body">
+	    <div class='sheet-3colrow'>
+	      <div class='sheet-col'>
+	          
+	         
+	        <h3 style="margin-bottom: 10px;text-align: center;">Basics</h3>
+	        
+	        <label class='sheet-character-attributes'>Name</label>
+	        <input type="text" name='attr_Name' class='sheet-input-long' value=""><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+	
+
+	        <label class='sheet-character-attributes'>Money</label>
+	        <input type="text" name='attr_Money' class='sheet-input-long' value=""><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+	
+
+	        <label class='sheet-character-attributes'>Description</label>
+	        <input type="text" name='attr_Description' class='sheet-input-long' value=""><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+	
+
+	        <label class='sheet-character-attributes'>XP Gained</label>
+	        <input type="text" name='attr_Quick_Bio' class='sheet-input-long' value=""><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+	
+
+	        <label class='sheet-character-attributes'>XP Spent</label>
+	        <input type="text" name='attr_Group' class='sheet-input-long' value=""><br/>
+	      </div>
+	
+
+	      <div class='sheet-col'>
+	        <h3 style="margin-bottom: 10px;text-align: center;">Primary Attributes</h3>
+	
+
+	        <label class='sheet-skill-name'>Strength</label>
+	        <input type="number" name='attr_Strength' class='sheet-input-short' value="0">
+	
+	
+	        <input  type="hidden" name="attr_StrengthRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s Strength Roll}} {{skill= Strength}} {{roll_value=  [[1d20+?{Modifier?|0}]] vs. @{Strength} }}">
+	        <button type='roll' value="@{StrengthRoll}" name='roll_Strength'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+	
+
+	        <label class='sheet-skill-name'>Coordination</label>
+	        <input type="number" name='attr_Coordination' class='sheet-input-short' value="0">
+	
+	
+	        <input  type="hidden" name="attr_CoordinationRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s Coordination Roll}} {{skill= Coordination}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Coordination} }}">
+	        <button type='roll' value="@{CoordinationRoll}" name='roll_Coordination'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+	
+
+	        <label class='sheet-skill-name'>Observation</label>
+	        <input type="number" name='attr_Observation' class='sheet-input-short' value="0">
+	
+	
+	        <input  type="hidden" name="attr_ObservationRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s Observation Roll}} {{skill= Observation}} {{roll_value= [[1d20+?{Modifier|0}]] vs. @{Observation} }}">
+	        <button type='roll' value="@{ObservationRoll}" name='roll_Observation'></button>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+	
+
+	        <label class='sheet-skill-name'>Stature</label>
+	        <input type="number" name='attr_Stature' class='sheet-input-short' value="0">
+	
+	
+	        <input  type="hidden" name="attr_StatureRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s Stature Roll}} {{skill= Stature}} {{roll_value= [[1d20+?{Modifier|0}]] vs. @{Stature} }}">
+	        <button type='roll' value="@{StatureRoll}" name='roll_Stature'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+	
+
+	        <label class='sheet-skill-name'>Luck</label>
+	        <input type="number" name='attr_Luck' class='sheet-input-short' value="0">
+	
+	
+	        <input  type="hidden" name="attr_LuckRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s Luck Roll}} {{skill= Luck}} {{roll_value=  [[1d20+?{Modifier|0}]] vs. @{Luck} }}">
+	        <button type='roll' value="@{LuckRoll}" name='roll_Luck'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+	
+
+	
+	
+	
+	
+	
+	
+	        <br/>
+	      </div>
+	
+
+	      <div class='sheet-col'>
+	
+	
+
+	        <h3 style="margin-bottom: 10px;text-align: center;">Wounds</h3>
+	
+
+	        <label class='sheet-skill-name'>Wound Points</label>
+	        <input type="number" name='attr_WoundPoints' class='sheet-input-short' value="0">
+	
+	
+	
+	
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+	
+
+	        <label class='sheet-skill-name'>Wound Limit</label>
+	        <input class='sheet-input-short' name="attr_WoundLimit" value="(@{Strength})" disabled="true" style="text-align:center;">
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+	
+
+            <label class='sheet-skill-name'># Light Wounds</label>
+	        <input type="number" name='attr_LightWounds' class='sheet-input-short' value="0">
+	         <hr style="margin-top: 3px; margin-bottom: 10px;">
+	
+            <label class='sheet-skill-name'># Serious Wounds</label>
+	        <input type="number" name='attr_SeriousWounds' class='sheet-input-short' value="0">
+	         <hr style="margin-top: 3px; margin-bottom: 10px;">
+	         
+	          <label class='sheet-skill-name'>Wound Penalty</label>
+ 	        <input class='sheet-input-short' name="attr_WoundPenalty" value="([[[[@{SeriousWounds}*4]]+@{LightWounds}]])" disabled="true" style="text-align:center;">
+	         <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+	        <br/>
+	      </div>
+	
+
+	    </div>
+	  </div>
+	</div>
+
+
+	<div>
+	  <div class="sheet-section-header">WORKIN'</div>
+	  <input type="checkbox" class="sheet-section-show-hide" name="attr_HideSkillsDisplay"/><span></span><br/>
+	  <div class="sheet-section-body">
+	    <div class='sheet-3colrow'>
+	      <div class='sheet-col'>
+	        <h3 style="margin-bottom: 10px;text-align: center;">Skills: A-I</h3>
+	
+
+	        <input type="hidden" name="attr_skills_section1" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} ?{Dice Pool|Skill1, {{skill= Skill1&amp;#125;&amp;#125; {{roll_value= [[ [[@{Skill1}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{Skill1Mod} ]]&amp;#125;&amp;#125;|Skill2, {{skill= Skill2&amp;#125;&amp;#125; {{roll_value= [[ [[@{Skill2}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{Skill2Mod} ]]&amp;#125;&amp;#125;|Climbing/Jumping, {{skill= Climbing/Jumping&amp;#125;&amp;#125; {{roll_value= [[ [[@{Artist}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{ArtistMod} ]]&amp;#125;&amp;#125;|Assaying, {{skill= Assaying&amp;#125;&amp;#125; {{roll_value= [[ [[@{Assaying}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{AssayingMod} ]]&amp;#125;&amp;#125;|Bartending, {{skill= Bartending&amp;#125;&amp;#125; {{roll_value= [[ [[@{Bartending}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{BartendingMod} ]]&amp;#125;&amp;#125;|Bureaucracy, {{skill= Bartending&amp;#125;&amp;#125; {{roll_value= [[ [[@{Bureaucracy}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{BureaucracyMod} ]]&amp;#125;&amp;#125;}"/>
+	
+
+	        <label class='sheet-skill-name'>Accounting</label>
+	        <input type="number" name='attr_Accounting' class='sheet-input-short' value="0">
+	        
+	        <input  type="hidden" name="attr_AccountingRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Accounting}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Accounting}}}">
+	        <button type='roll' value="@{AccountingRoll}" name='roll_Accounting'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+	
+
+	        <label class='sheet-skill-name'>Artillerist</label>
+	        <input type="number" name='attr_Artillerist' class='sheet-input-short' value="0">
+	        
+	        <input  type="hidden" name="attr_ArtilleristRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Artillerist}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Artillerist}}}">
+	        <button type='roll' value="@{ArtilleristRoll}" name='roll_Artillerist'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+	
+
+	        <label class='sheet-skill-name'>Artist</label>
+	        <input type="number" name='attr_Artist' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_ArtistRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Artist}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Artist}}}">
+	        <button type='roll' value="@{ArtistRoll}" name='roll_Artist'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+	
+
+	        <label class='sheet-skill-name'>Assaying</label>
+	        <input type="number" name='attr_Assaying' class='sheet-input-short' value="0">
+	        
+	        <input  type="hidden" name="attr_AssayingRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Assaying}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Assaying}}}">
+	        <button type='roll' value="@{AssayingRoll}" name='roll_Assaying'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+	
+
+	        <label class='sheet-skill-name'>Bartending</label>
+	        <input type="number" name='attr_Bartending' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_BartendingRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Bartending}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Bartending}}}">
+	        <button type='roll' value="@{BartendingRoll}" name='roll_Bartending'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+	
+
+	        <label class='sheet-skill-name'>Bureaucracy</label>
+	        <input type="number" name='attr_Bureaucracy' class='sheet-input-short' value="0">
+	      
+	        <input  type="hidden" name="attr_BureaucracyRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Bureaucracy}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Bureaucracy}}}">
+	        <button type='roll' value="@{BureaucracyRoll}" name='roll_Bureaucracy'></button><br/>
+	         <hr style="margin-top: 3px; margin-bottom: 10px;">
+	        
+	        <label class='sheet-skill-name'>Carpentry</label>
+	        <input type="number" name='attr_Carpentry' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_CarpentryRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Carpentry}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Carpentry}}}">
+	        <button type='roll' value="@{CarpentryRoll}" name='roll_Carpentry'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+	
+
+	        <label class='sheet-skill-name'>Chemistry</label>
+	        <input type="number" name='attr_Chemistry' class='sheet-input-short' value="0">
+	        
+	        <input  type="hidden" name="attr_ChemistryRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Chemistry}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Chemistry}}}">
+	        <button type='roll' value="@{ChemistryRoll}" name='roll_Chemistry'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+	
+	      
+	        <label class='sheet-skill-name'>Civil Engineering</label>
+	        <input type="number" name='attr_Civil_Engineering' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_Civil_EngineeringRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Civil Engineering}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Civil_Engineering}}}">
+	        <button type='roll' value="@{Civil_EngineeringRoll}" name='roll_Civil_Engineering'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+	        
+	        <label class='sheet-skill-name'>Cooking</label>
+	        <input type="number" name='attr_Cooking' class='sheet-input-short' value="0">
+	        
+	        <input  type="hidden" name="attr_CookingRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Cooking}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Cooking}}}">
+	        <button type='roll' value="@{CookingRoll}" name='roll_Cooking'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+	        
+	         <label class='sheet-skill-name'>Cow Handling</label>
+	        <input type="number" name='attr_Cow_Handling' class='sheet-input-short' value="0">
+	        
+	        <input  type="hidden" name="attr_Cow_HandlingRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Cow Handling}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Cow_Handling}}}">
+	        <button type='roll' value="@{Cow_HandlingRoll}" name='roll_Cow_Handling'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+	
+
+	        <label class='sheet-skill-name'>Dentistry</label>
+	        <input type="number" name='attr_Dentistry' class='sheet-input-short' value="0">
+	        
+	        <input  type="hidden" name="attr_DentistryRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Dentistry}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Dentistry}}}">
+	        <button type='roll' value="@{DentistryRoll}" name='roll_Dentistry'></button><br/>
+	         <hr style="margin-top: 3px; margin-bottom: 10px;">
+	        
+	         <label class='sheet-skill-name'>Entertainer</label>
+	        <input type="number" name='attr_Entertainer' class='sheet-input-short' value="0">
+	        
+	        <input  type="hidden" name="attr_EntertainerRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Entertainer}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Entertainer}}}">
+	        <button type='roll' value="@{EntertainerRoll}" name='roll_Entertainer'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+	
+
+	        <label class='sheet-skill-name'>Explosives</label>
+	        <input type="number" name='attr_Explosives' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_ExplosivesRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Explosives}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Explosives}}}">
+	        <button type='roll' value="@{ExplosivesRoll}" name='roll_Explosives'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+	
+
+	        <label class='sheet-skill-name'>Farming</label>
+	        <input type="number" name='attr_Farming' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_FarmingRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Farming}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Farming}}}">
+	        <button type='roll' value="@{FarmingRoll}" name='roll_Farming'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+	
+
+	        <label class='sheet-skill-name'>Fast Draw</label>
+	        <input type="number" name='attr_Fast_Draw' class='sheet-input-short' value="0">
+	        
+	        <input  type="hidden" name="attr_Fast_DrawRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Fast Draw}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Fast_Draw}}}">
+	        <button type='roll' value="@{Fast_DrawRoll}" name='roll_Fast_Draw'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+	
+
+	        <label class='sheet-skill-name'>Gambling</label>
+	        <input type="number" name='attr_Gambling' class='sheet-input-short' value="0">
+	        
+	        <input  type="hidden" name="attr_GamblingRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Gambling}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Gambling}}}">
+	        <button type='roll' value="@{GamblingRoll}" name='roll_Gambling'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+	
+
+	        <label class='sheet-skill-name'>Gunsmithing</label>
+	        <input type="number" name='attr_Gunsmithing' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_GunsmithingRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Gunsmithing}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Gunsmithing}}}">
+ 	        <button type='roll' value="@{GunsmithingRoll}" name='roll_Gunsmithing'></button><br/>
+ 	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+          	
+	
+	       
+	 <label class='sheet-skill-name'>Indian Contact</label>
+	        <input type="number" name='attr_Indian_Contact' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_Indian_ContactRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Indian Contact}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Indian_Contact}}}">
+ 	        <button type='roll' value="@{Indian_ContactRoll}" name='roll_Gunsmithing'></button><br/>
+ 	        
+	      
+ 	        
+	      </div>
+	
+
+	      <div class='sheet-col'>
+	        <h3 style="margin-bottom: 10px;text-align: center;">Skills: J-Sh</h3>
+	        <input type="hidden" name="attr_skills_section2" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} ?{Dice Pool|Carpentry, {{skill= Carpentry&amp;#125;&amp;#125; {{roll_value= [[ [[@{Carpentry}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{CarpentryMod} ]]&amp;#125;&amp;#125;|Chemistry, {{skill= Chemistry&amp;#125;&amp;#125; {{roll_value= [[ [[@{Chemistry}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{ChemistryMod} ]]&amp;#125;&amp;#125;|Civil Engineering, {{skill= Civil Engineering&amp;#125;&amp;#125; {{roll_value= [[ [[@{Civil Engineering}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{Civil EngineeringMod} ]]&amp;#125;&amp;#125;|Cooking, {{skill= Cooking&amp;#125;&amp;#125; {{roll_value= [[ [[@{Cooking}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{CookingMod} ]]&amp;#125;&amp;#125;|Cow Handling, {{skill= Cow Handling&amp;#125;&amp;#125; {{roll_value= [[ [[@{Cow Handling}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{Cow HandlingMod} ]]&amp;#125;&amp;#125;|Dentistry, {{skill= Dentistry&amp;#125;&amp;#125; {{roll_value= [[ [[@{Dentistry}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{DentistryMod} ]]&amp;#125;&amp;#125;}"/>
+	
+	
+	 	        <label class='sheet-skill-name'>Journalisim</label>
+	        <input type="number" name='attr_Journalisim' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_JournalisimRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Journalisim}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Journalisim}}}">
+	        <button type='roll' value="@{JournalisimRoll}" name='roll_Journalisim'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+	        
+	       	              <label class='sheet-skill-name'>Law</label>
+	        <input type="number" name='attr_Law' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_LawRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Law}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Law}}}">
+	        <button type='roll' value="@{LawRoll}" name='roll_Law'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+            <label class='sheet-skill-name'>Leadership</label>
+	        <input type="number" name='attr_Leadership' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_LeadershipRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Leadership}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Leadership}}}">
+	        <button type='roll' value="@{LeadershipRoll}" name='roll_Leadership'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+	        
+	        <label class='sheet-skill-name'>Linguistics</label>
+	        <input type="number" name='attr_Linguistics' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_LinguisticsRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Linguistics}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Linguistics}}}">
+	        <button type='roll' value="@{LinguisticsRoll}" name='roll_Linguistics'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+	        
+	                <label class='sheet-skill-name'>Literacy</label>
+	        <input type="number" name='attr_Literacy' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_LiteracyRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Literacy}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Literacy}}}">
+	        <button type='roll' value="@{LiteracyRoll}" name='roll_Literacy'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+        <label class='sheet-skill-name'>Locksmithing</label>
+	        <input type="number" name='attr_Locksmithing' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_LocksmithingRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Locksmithing}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Locksmithing}}}">
+	        <button type='roll' value="@{LocksmithingRoll}" name='roll_Locksmithing'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+        <label class='sheet-skill-name'>Medicine</label>
+	        <input type="number" name='attr_Medicine' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_MedicineRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Medicine}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Medicine}}}">
+	        <button type='roll' value="@{MedicineRoll}" name='roll_Medicine'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+	        
+	                <label class='sheet-skill-name'>Orienteering</label>
+	        <input type="number" name='attr_Orienteering' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_OrienteeringRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Orienteering}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Orienteering}}}">
+	        <button type='roll' value="@{OrienteeringRoll}" name='roll_Orienteering'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+        <label class='sheet-skill-name'>Photography</label>
+	        <input type="number" name='attr_Photography' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_PhotographyRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Photography}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Photography}}}">
+	        <button type='roll' value="@{PhotographyRoll}" name='roll_Photography'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+        <label class='sheet-skill-name'>Pocket Picking</label>
+	        <input type="number" name='attr_Pocket_Picking' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_Pocket_PickingRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Pocket Picking}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Pocket_Picking}}}">
+	        <button type='roll' value="@{Pocket_PickingRoll}" name='roll_Pocket Picking'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+        <label class='sheet-skill-name'>Preaching</label>
+	        <input type="number" name='attr_Preaching' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_PreachingRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Preaching}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Preaching}}}">
+	        <button type='roll' value="@{PreachingRoll}" name='roll_Preaching'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+        <label class='sheet-skill-name'>Prospecting</label>
+	        <input type="number" name='attr_Prospecting' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_ProspectingRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Prospecting}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Prospecting}}}">
+	        <button type='roll' value="@{ProspectingRoll}" name='roll_Prospecting'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+        <label class='sheet-skill-name'>Public Speaking</label>
+	        <input type="number" name='attr_Public_Speaking' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_Public_SpeakingRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Public Speaking}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Public_Speaking}}}">
+	        <button type='roll' value="@{Public_SpeakingRoll}" name='roll_Public_Speaking'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+        <label class='sheet-skill-name'>Railroad Eng</label>
+	        <input type="number" name='attr_Railroad_Engineering' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_Railroad_EngineeringRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Railroad Engineering}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Railroad_Engineering}}}">
+	        <button type='roll' value="@{Railroad_EngineeringRoll}" name='roll_Railroad_Engineering'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+
+        <label class='sheet-skill-name'>Riding</label>
+	        <input type="number" name='attr_Riding' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_RidingRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Riding}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Riding}}}">
+	        <button type='roll' value="@{RidingRoll}" name='roll_Riding'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+        <label class='sheet-skill-name'>Roping</label>
+	        <input type="number" name='attr_Roping' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_RopingRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Roping}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Roping}}}">
+	        <button type='roll' value="@{RopingRoll}" name='roll_Roping'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+	        
+	          <label class='sheet-skill-name'>Saddlemaking</label>
+	        <input type="number" name='attr_Saddlemaking' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_SaddlemakingRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Saddlemaking}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Saddlemaking}}}">
+	        <button type='roll' value="@{SaddlemakingRoll}" name='roll_Saddlemaking'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+        <label class='sheet-skill-name'>Scouting</label>
+	        <input type="number" name='attr_Scouting' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_ScoutingRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Scouting}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Scouting}}}">
+	        <button type='roll' value="@{ScoutingRoll}" name='roll_Scouting'></button><br/>
+	          <hr style="margin-top: 3px; margin-bottom: 10px;">
+	        
+
+       <label class='sheet-skill-name'>Sheepherding</label>
+	        <input type="number" name='attr_Sheepherding' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_SheepherdingRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Sheepherding}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Sheepherding}}}">
+	        <button type='roll' value="@{SheepherdingRoll}" name='roll_Sheepherding'></button><br/>
+	      
+
+        
+	        
+	        
+	      </div>
+	
+
+	      <div class='sheet-col'>
+	        <h3 style="margin-bottom: 10px;text-align: center;">Skills: Si-Z</h3>
+	        <input type="hidden" name="attr_skills_section3" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} ?{Dice Pool|Entertainer, {{skill= Entertainer&amp;#125;&amp;#125; {{roll_value= [[ [[@{Entertainer}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{EntertainerMod} ]]&amp;#125;&amp;#125;|Explosives, {{skill= Explosives&amp;#125;&amp;#125; {{roll_value= [[ [[@{Explosives}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{ExplosivesMod} ]]&amp;#125;&amp;#125;|Farming, {{skill= Farming&amp;#125;&amp;#125; {{roll_value= [[ [[@{Farming}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{FarmingMod} ]]&amp;#125;&amp;#125;|Fast Draw, {{skill= Fast Draw&amp;#125;&amp;#125; {{roll_value= [[ [[@{Fast Draw}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{Fast DrawMod} ]]&amp;#125;&amp;#125;|Gambling, {{skill= Gambling&amp;#125;&amp;#125; {{roll_value= [[ [[@{Gambling}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{GamblingMod} ]]&amp;#125;&amp;#125;|Gunsmithing, {{skill= Gunsmithing&amp;#125;&amp;#125; {{roll_value= [[ [[@{Gunsmithing}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{GunsmithingMod} ]]&amp;#125;&amp;#125;}"/>
+	
+	      
+ <label class='sheet-skill-name'>Silversmithing</label>
+	        <input type="number" name='attr_Silversmithing' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_SilversmithingRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Silversmithing}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Silversmithing}}}">
+	        <button type='roll' value="@{SilversmithingRoll}" name='roll_Silversmithigg'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+	        
+
+        <label class='sheet-skill-name'>Smithing</label>
+	        <input type="number" name='attr_Smithing' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_SmithingRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Smithing}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Smithing}}}">
+	        <button type='roll' value="@{SmithingRoll}" name='roll_Smithing'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+        <label class='sheet-skill-name'>Stealth</label>
+	        <input type="number" name='attr_Stealth' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_StealthRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Stealth}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Stealth}}}">
+	        <button type='roll' value="@{StealthRoll}" name='roll_Stealth'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+        <label class='sheet-skill-name'>Surverying</label>
+	        <input type="number" name='attr_Surverying' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_SurveryingRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Surverying}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Surverying}}}">
+	        <button type='roll' value="@{SurveryingRoll}" name='roll_Surverying'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+        <label class='sheet-skill-name'>Survival</label>
+	        <input type="number" name='attr_Survival' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_SurvivalRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Survival}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Survival}}}">
+	        <button type='roll' value="@{SurvivalRoll}" name='roll_Survival'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+        <label class='sheet-skill-name'>Swimming</label>
+	        <input type="number" name='attr_Swimming' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_SwimmingRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Swimming}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Swimming}}}">
+	        <button type='roll' value="@{SwimmingRoll}" name='roll_Swimming'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+        <label class='sheet-skill-name'>Tactics</label>
+	        <input type="number" name='attr_Tactics' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_TacticsRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Tactics}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Tactics}}}">
+	        <button type='roll' value="@{TacticsRoll}" name='roll_Tactics'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+        <label class='sheet-skill-name'>Tailor</label>
+	        <input type="number" name='attr_Tailor' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_TailorRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Tailor}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Tailor}}}">
+	        <button type='roll' value="@{TailorRoll}" name='roll_Tailor'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+
+        <label class='sheet-skill-name'>Teamster</label>
+	        <input type="number" name='attr_Teamster' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_TeamsterRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Teamster}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Teamster}}}">
+	        <button type='roll' value="@{TeamsterRoll}" name='roll_Teamster'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+        <label class='sheet-skill-name'>Telegraph</label>
+	        <input type="number" name='attr_Telegraph' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_TelegraphRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Telegraph}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Telegraph}}}">
+	        <button type='roll' value="@{TelegraphRoll}" name='roll_Telegraph'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+        <label class='sheet-skill-name'>Thespian</label>
+	        <input type="number" name='attr_Thespian' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_ThespianRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Thespian}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Thespian}}}">
+	        <button type='roll' value="@{ThespianRoll}" name='roll_Thespian'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+        <label class='sheet-skill-name'>Throwing</label>
+	        <input type="number" name='attr_Throwing' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_ThrowingRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Throwing}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Throwing}}}">
+	        <button type='roll' value="@{ThrowingRoll}" name='roll_Throwing'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+        <label class='sheet-skill-name'>Tracking</label>
+	        <input type="number" name='attr_Tracking' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_TrackingRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Tracking}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Tracking}}}">
+	        <button type='roll' value="@{TrackingRoll}" name='roll_Tracking'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+        <label class='sheet-skill-name'>Trading</label>
+	        <input type="number" name='attr_Trading' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_TradingRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Trading}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Trading}}}">
+	        <button type='roll' value="@{TradingRoll}" name='roll_Trading'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+        <label class='sheet-skill-name'>Trapping</label>
+	        <input type="number" name='attr_Trapping' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_TrappingRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Trapping}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Trapping}}}">
+	        <button type='roll' value="@{TrappingRoll}" name='roll_Trapping'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+        <label class='sheet-skill-name'>Veterinarian</label>
+	        <input type="number" name='attr_Veterinarian' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_VeterinarianRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Veterinarian}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Veterinarian}}}">
+	        <button type='roll' value="@{VeterinarianRoll}" name='roll_Veterinarian'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+        <label class='sheet-skill-name'>Wainright</label>
+	        <input type="number" name='attr_Wainright' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_WainrightRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Wainright}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Wainright}}}">
+	        <button type='roll' value="@{WainrightRoll}" name='roll_Wainright'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+
+        <label class='sheet-skill-name'>Whip</label>
+	        <input type="number" name='attr_Whip' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_WhipRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Whip}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Whip}}}">
+	        <button type='roll' value="@{WhipRoll}" name='roll_Whip'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+
+        <label class='sheet-skill-name'>Wrangling</label>
+	        <input type="number" name='attr_Wrangling' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_WranglingRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Wrangling}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Wrangling}}}">
+	        <button type='roll' value="@{WranglingRoll}" name='roll_Wrangling'></button><br/>
+	        
+
+         </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div>
+	  <div class="sheet-section-header">FIGHTIN'</div>
+	  <input type="checkbox" class="sheet-section-show-hide" name="attr_HideFightinDisplay"/><span></span><br/>
+	  <div class="sheet-section-body">
+	    <div class='sheet-3colrow'>
+	      <div class='sheet-col'>
+	        <h3 style="margin-bottom: 10px;text-align: center;">Combat Skills</h3>
+	
+
+	        <input type="hidden" name="attr_skills_section1" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} ?{Dice Pool|Skill1, {{skill= Skill1&amp;#125;&amp;#125; {{roll_value= [[ [[@{Skill1}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{Skill1Mod} ]]&amp;#125;&amp;#125;|Skill2, {{skill= Skill2&amp;#125;&amp;#125; {{roll_value= [[ [[@{Skill2}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{Skill2Mod} ]]&amp;#125;&amp;#125;|Climbing/Jumping, {{skill= Climbing/Jumping&amp;#125;&amp;#125; {{roll_value= [[ [[@{Artist}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{ArtistMod} ]]&amp;#125;&amp;#125;|Assaying, {{skill= Assaying&amp;#125;&amp;#125; {{roll_value= [[ [[@{Assaying}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{AssayingMod} ]]&amp;#125;&amp;#125;|Bartending, {{skill= Bartending&amp;#125;&amp;#125; {{roll_value= [[ [[@{Bartending}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{BartendingMod} ]]&amp;#125;&amp;#125;|Bureaucracy, {{skill= Bartending&amp;#125;&amp;#125; {{roll_value= [[ [[@{Bureaucracy}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{BureaucracyMod} ]]&amp;#125;&amp;#125;}"/>
+	
+
+            <label class='sheet-skill-name'>Archery</label>
+	        <input type="number" name='attr_Archery' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_ArcheryRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Archery}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. [[@{Coordination}}+@{Archery}]]}">
+	        <button type='roll' value="@{ArcheryRoll}" name='roll_Archery'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+	        
+	                    <label class='sheet-skill-name'>Blade</label>
+	        <input type="number" name='attr_Blade' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_BladeRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Blade}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Blade}}}">
+	        <button type='roll' value="@{BladeRoll}" name='roll_Blade'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+	        
+	                    <label class='sheet-skill-name'>Brawling</label>
+	        <input type="number" name='attr_Brawling' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_BrawlingRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Brawling}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Brawling}}}">
+	        <button type='roll' value="@{BrawlingRoll}" name='roll_Brawling'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+
+            <label class='sheet-skill-name'>Pistol</label>
+	        <input type="number" name='attr_Pistol' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_PistolRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Pistol}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Pistol}}}">
+	        <button type='roll' value="@{PistolRoll}" name='roll_Pistol'></button><br/>
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+            <label class='sheet-skill-name'>Rifle</label>
+	        <input type="number" name='attr_Rifle' class='sheet-input-short' value="0">
+	       
+	        <input  type="hidden" name="attr_RifleRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} {{skill= Rifle}} {{roll_value= [[1d20+?{Modifier?|0}]] vs. @{Rifle}}}">
+	        <button type='roll' value="@{RifleRoll}" name='roll_Rifle'></button><br/>
+	        
+	           
+	      </div>
+	
+
+	      <div class='sheet-col'>
+	        <h3 style="margin-bottom: 10px;text-align: center;">Shots</h3>
+	        <input type="hidden" name="attr_skills_section2" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} ?{Dice Pool|Carpentry, {{skill= Carpentry&amp;#125;&amp;#125; {{roll_value= [[ [[@{Carpentry}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{CarpentryMod} ]]&amp;#125;&amp;#125;|Chemistry, {{skill= Chemistry&amp;#125;&amp;#125; {{roll_value= [[ [[@{Chemistry}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{ChemistryMod} ]]&amp;#125;&amp;#125;|Civil Engineering, {{skill= Civil Engineering&amp;#125;&amp;#125; {{roll_value= [[ [[@{Civil Engineering}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{Civil EngineeringMod} ]]&amp;#125;&amp;#125;|Cooking, {{skill= Cooking&amp;#125;&amp;#125; {{roll_value= [[ [[@{Cooking}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{CookingMod} ]]&amp;#125;&amp;#125;|Cow Handling, {{skill= Cow Handling&amp;#125;&amp;#125; {{roll_value= [[ [[@{Cow Handling}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{Cow HandlingMod} ]]&amp;#125;&amp;#125;|Dentistry, {{skill= Dentistry&amp;#125;&amp;#125; {{roll_value= [[ [[@{Dentistry}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{DentistryMod} ]]&amp;#125;&amp;#125;}"/>
+	
+	        <label class='sheet-skill-name'>Careful</label>
+	        <input class='sheet-input-short' name="attr_Careful" value="(@{Coordination})" disabled="true" style="text-align:center;">
+	         <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+            <label class='sheet-skill-name'>Steady</label>
+ 	        <input class='sheet-input-short' name="attr_Steady" value="(ceil([[@{Coordination}/2]]))" disabled="true" style="text-align:center;">
+	         <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+            <label class='sheet-skill-name'>Hipshot</label>
+	        <input class='sheet-input-short' name="attr_Hipshot" value="(floor([[@{Coordination}/4]]))" disabled="true" style="text-align:center;">
+	         <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+            <label class='sheet-skill-name'>Fanshot</label>
+	        <input class='sheet-input-short' name="attr_Fanshot" value="(@{Pistol})" disabled="true" style="text-align:center;">
+	         <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+	
+	   </div>
+	    </div>
+	  </div>
+	</div>
+
+
+	<div>
+	  <div class="sheet-section-header">GUNS</div>
+	  <input type="checkbox" class="sheet-section-show-hide" name="attr_HideEquipmentDisplay"/><span></span><br/>
+	  <div class="sheet-section-body">
+	    <div class='sheet-3colrow'>
+	      <div class='sheet-col'>
+	          
+	        <h3 style="margin-bottom: 10px;text-align: center;">Pistol</h3>
+	        
+	        
+	          <label class='sheet-weapon-attributes'>Name</label>
+	          <input type="text" name="attr_WeaponName1"  class='sheet-input-long'/>
+	          <br  style="margin-bottom: 10px;"/>
+	            <hr style="margin-top: 3px; margin-bottom: 10px;">
+	          
+	        <label class='sheet-vehicle-attributes'>Rng Short</label>
+	        <input type="number" name='attr_Gun1Short' class='sheet-input-short' value="0">
+	      <hr style="margin-top: 3px; margin-bottom: 10px;">
+	        <label class='sheet-vehicle-attributes'>Rng Long</label>
+	        <input type="number" name='attr_Gun1Long' class='sheet-input-short' value="0">
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+	         <label class='sheet-vehicle-attributes'>Rng Extreme</label>
+	        <input type="number" name='attr_Gun1Extreme' class='sheet-input-short' value="0">
+	        	 <hr style="margin-top: 3px; margin-bottom: 10px;">
+	        	         <label class='sheet-vehicle-attributes'>Ammo</label>
+	        <input type="number" name='attr_Gun1Ammo' class='sheet-input-short' value="0">
+	        	    <hr style="margin-top: 3px; margin-bottom: 10px;">
+	        	         <label class='sheet-vehicle-attributes'>Speed</label>
+	        <input type="number" name='attr_Gun1Speed' class='sheet-input-short' value="0">
+	        	   <hr style="margin-top: 3px; margin-bottom: 10px;">
+	        	         <label class='sheet-vehicle-attributes'>Severity</label>
+	        <input type="number" name='attr_Gun1Severity' class='sheet-input-short' value="0">
+	        	    <hr style="margin-top: 3px; margin-bottom: 10px;">
+	       </fieldset>
+	        	        </div>
+	        	        
+	        	              <div class='sheet-col'>
+	        <h3 style="margin-bottom: 10px;text-align: center;">Other Ranged</h3>
+	         
+	         <label class='sheet-weapon-attributes'>Name</label>
+	          <input type="text" name="attr_WeaponName2"  class='sheet-input-long'/>
+	          <br  style="margin-bottom: 10px;"/>
+	            <hr style="margin-top: 3px; margin-bottom: 10px;">
+	          
+	        <label class='sheet-vehicle-attributes'>Rng Short</label>
+	        <input type="number" name='attr_Gun2Short' class='sheet-input-short' value="0">
+	      <hr style="margin-top: 3px; margin-bottom: 10px;">
+	        <label class='sheet-vehicle-attributes'>Rng Long</label>
+	        <input type="number" name='attr_Gun2Long' class='sheet-input-short' value="0">
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+	         <label class='sheet-vehicle-attributes'>Rng Extreme</label>
+	        <input type="number" name='attr_Gun2Extreme' class='sheet-input-short' value="0">
+	        	 <hr style="margin-top: 3px; margin-bottom: 10px;">
+	        	         <label class='sheet-vehicle-attributes'>Ammo</label>
+	        <input type="number" name='attr_Gun2Ammo' class='sheet-input-short' value="0">
+	        	    <hr style="margin-top: 3px; margin-bottom: 10px;">
+	        	         <label class='sheet-vehicle-attributes'>Speed</label>
+	        <input type="number" name='attr_Gun2Speed' class='sheet-input-short' value="0">
+	        	   <hr style="margin-top: 3px; margin-bottom: 10px;">
+	        	         <label class='sheet-vehicle-attributes'>Severity</label>
+	        <input type="number" name='attr_Gun2Severity' class='sheet-input-short' value="0">
+	        	    <hr style="margin-top: 3px; margin-bottom: 10px;">
+	  
+	        	        </div>
+
+
+	        	              <div class='sheet-col'>
+	        <h3 style="margin-bottom: 10px;text-align: center;">Extra Steel</h3>
+	         
+	         <label class='sheet-weapon-attributes'>Name</label>
+	          <input type="text" name="attr_WeaponName3"  class='sheet-input-long'/>
+	          <br  style="margin-bottom: 10px;"/>
+	            <hr style="margin-top: 3px; margin-bottom: 10px;">
+	          
+	        <label class='sheet-vehicle-attributes'>Rng Short</label>
+	        <input type="number" name='attr_Gun3Short' class='sheet-input-short' value="0">
+	      <hr style="margin-top: 3px; margin-bottom: 10px;">
+	        <label class='sheet-vehicle-attributes'>Rng Long</label>
+	        <input type="number" name='attr_Gun3Long' class='sheet-input-short' value="0">
+	        <hr style="margin-top: 3px; margin-bottom: 10px;">
+	         <label class='sheet-vehicle-attributes'>Rng Extreme</label>
+	        <input type="number" name='attr_Gun3Extreme' class='sheet-input-short' value="0">
+	        	 <hr style="margin-top: 3px; margin-bottom: 10px;">
+	        	         <label class='sheet-vehicle-attributes'>Ammo</label>
+	        <input type="number" name='attr_Gun3Ammo' class='sheet-input-short' value="0">
+	        	    <hr style="margin-top: 3px; margin-bottom: 10px;">
+	        	         <label class='sheet-vehicle-attributes'>Speed</label>
+	        <input type="number" name='attr_Gun3Speed' class='sheet-input-short' value="0">
+	        	   <hr style="margin-top: 3px; margin-bottom: 10px;">
+	        	         <label class='sheet-vehicle-attributes'>Severity</label>
+	        <input type="number" name='attr_Gun3Severity' class='sheet-input-short' value="0">
+	        	    <hr style="margin-top: 3px; margin-bottom: 10px;">
+	  
+	        	        </div>
+
+
+	      </div>
+	  </div>
+	</div>
+	
+
+	
+
+	
+
+	<div>
+	  <div class="sheet-section-header">MISCELLANEOUS</div>
+	  <input type="checkbox" class="sheet-section-show-hide" name="attr_HideMiscDisplay"/><span></span><br/>
+	  <div class="sheet-section-body">
+	    <div class='sheet-3colrow'>
+	      <div class='sheet-col'>
+	        <h3 style="margin-bottom: 10px;text-align: center;">Background & Personality</h3>
+	        <textarea name="attr_Background" class="misc"></textarea>
+	      </div>
+	
+
+	      <div class='sheet-col'>
+	        <h3 style="margin-bottom: 10px;text-align: center;">Other Equipment</h3>
+	        <textarea name="attr_OtherEquipment"  class="misc"></textarea>
+	      </div>
+	
+
+	      <div class='sheet-col'>
+	        <h3 style="margin-bottom: 10px;text-align: center;">Notes</h3>
+	        <textarea name="attr_CharacterAdvancementNotes"  class="misc"></textarea>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
+
+	<!--ROLL TEMPLATES-->
+	<div class="rolltemplates">
+	  <rolltemplate class="sheet-rolltemplate-generic_roll">
+	    <table>
+	      <tr>
+	        <th>
+	          {{#roll_name}}
+	            {{roll_name}}
+	          {{/roll_name}}
+	        </th>
+	      </tr>
+	      {{#skill}}
+	        <tr>
+	            <td class="tcat">{{skill}} Skill</td>
+	        </tr>
+	      {{/skill}}
+	      {{#vehicle_action}}
+	        <tr>
+	            <td class="tcat">Action: {{vehicle_action}}</td>
+	        </tr>
+	      {{/vehicle_action}}
+	      {{#weapon_name}}
+	        <tr>
+	            <td class="tcat">Weapon: {{weapon_name}}</td>
+	        </tr>
+	      {{/weapon_name}}
+	      {{#roll_value}}
+	        <tr>
+	            <td class="tcat">Rolled: {{roll_value}}</td>
+	        </tr>
+	      {{/roll_value}}
+	      {{#weapon_range}}
+	        <tr>
+	            <td class="tcat">Range: {{weapon_range}}</td>
+	        </tr>
+	      {{/weapon_range}}
+	      {{#damage}}
+	        <tr>
+	            <td class="tcat">Damage: {{damage}}</td>
+	        </tr>
+	      {{/damage}}
+	    </table>
+	  </rolltemplate>
+	</div>
+                              

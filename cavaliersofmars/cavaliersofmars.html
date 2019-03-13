@@ -1,0 +1,375 @@
+<div>
+ <div>
+  <div class="sheet-section-header">The Cavalier of Mars</div>
+  <input type="checkbox" class="sheet-section-show-hide" name="attr_HideMiscDisplay"/><span></span><br/>
+  <div class="sheet-section-body">
+    <div class='sheet-2colrow'>
+     <div class='sheet-col'>
+        <label class='sheet-character-attributes'>Name</label>
+        <input type="text" name='attr_Name' class='sheet-input-long' value=""><br/>
+        <hr align="left" width="70%" style="margin-top: 3px; margin-bottom: 10px;">
+        
+        <label class='sheet-character-attributes'>Description</label>
+        <input type="text" name='attr_desc' class='sheet-input-long' value=""><br/>
+        <hr align="left" width="70%" style="margin-top: 3px; margin-bottom: 10px;">
+
+        <label class='sheet-character-attributes'>Trouble</label>
+        <input type="text" name='attr_Trouble' class='sheet-input-long' value=""><br/>
+        <hr align="left" width="70%" style="margin-top: 3px; margin-bottom: 10px;">
+        
+            
+        <label class='sheet-character-attributes'>Origin</label>
+        <input type="text" name='attr_OriginName' class='sheet-input-long' value=""><br/>
+        
+        <label class='sheet-character-attributes'><u><i>Roll</i></u></label>
+        <b>1D</b> <input type="number" name='attr_Origin' class='sheet-input-short' value="0">
+        <label class='sheet-plus'>|</label>
+        <input type="number" name='attr_OriginExh' class='sheet-input-short' value="0">
+        <input  type="hidden" name="attr_OriginExhRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s Origin Roll}} {{Origin= @{OriginName}}} {{roll_value= [[1d@{OriginExh}]]}}">
+        <button type='roll' value="@{OriginExhRoll}" name='roll_OriginExhRoll'></button><br/>
+        <hr align="left" width="70%" style="margin-top: 3px; margin-bottom: 10px;">
+        
+         <label class='sheet-character-attributes'>Relation #1</label>
+        <input type="text" name='attr_Rel1Name' class='sheet-input-long' value=""><br/>
+         <label class='sheet-character-attributes'><u><i>Roll</i></u></label>
+        <b>1D</b> <input type="number" name='attr_Rel1' class='sheet-input-short' value="0">
+        <label class='sheet-plus'>|</label>
+        <input type="number" name='attr_Rel1Exh' class='sheet-input-short' value="0">
+        <input  type="hidden" name="attr_Rel1ExhRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s Relationship #1 Roll}} {{Relationship #1= @{Rel1Name}}} {{roll_value= [[1d@{Rel1Exh}]]}}">
+        <button type='roll' value="@{Rel1ExhRoll}" name='roll_Rel1ExhRoll'></button><br/>
+        <hr align="left" width="70%" style="margin-top: 3px; margin-bottom: 10px;">
+        
+        <label class='sheet-character-attributes'>Relation #2</label>
+        <input type="text" name='attr_Rel2Name' class='sheet-input-long' value=""><br/>
+         <label class='sheet-character-attributes'><u><i>Roll</i></u></label>
+        <b>1D</b> <input type="number" name='attr_Rel2' class='sheet-input-short' value="0">
+        <label class='sheet-plus'>|</label>
+        <input type="number" name='attr_Rel2Exh' class='sheet-input-short' value="0">
+        <input  type="hidden" name="attr_Rel2ExhRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s Relationship #2 Roll}} {{Relationship #2= @{Rel2Name}}} {{roll_value= [[1d@{Rel2Exh}]]}}">
+        <button type='roll' value="@{Rel2ExhRoll}" name='roll_Rel2ExhRoll'></button><br/>
+        <hr align="left" width="70%" style="margin-top: 3px; margin-bottom: 10px;">
+        </div>
+        
+        <div class='sheet-col'>
+        
+        <label class='sheet-character-attributes'>Experience</label>
+        <input type="text" name='attr_XP' class='sheet-input-long' value=""><br/>
+        <hr align="left" width="70%" style="margin-top: 3px; margin-bottom: 10px;">
+        
+         <label class='sheet-character-attributes'>Path #1</label>
+        <input type="text" name='attr_Path1' class='sheet-input-long' value=""><br/>
+        <hr align="left" width="70%" style="margin-top: 3px; margin-bottom: 10px;">
+    
+         <label class='sheet-character-attributes'>Path #2</label>
+        <input type="text" name='attr_Path2' class='sheet-input-long' value=""><br/>
+        <hr align="left" width="70%" style="margin-top: 3px; margin-bottom: 10px;">
+        
+    
+                <label class='sheet-character-attributes'>Career #1</label>
+        <input type="text" name='attr_Career1Name' class='sheet-input-long' value=""><br/>
+         <label class='sheet-character-attributes'><u><i>Roll</i></u></label>
+        <b>1D</b> <input type="number" name='attr_Career1' class='sheet-input-short' value="0">
+        <label class='sheet-plus'>|</label>
+        <input type="number" name='attr_Career1Exh' class='sheet-input-short' value="0">
+        <input  type="hidden" name="attr_Career1ExhRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s Career #1 Roll}} {{Career #1= @{Career1Name}}} {{roll_value= [[1d@{Career1Exh}]]}}">
+        <button type='roll' value="@{Career1ExhRoll}" name='roll_Career1ExhRoll'></button><br/>
+        <hr align="left" width="70%" style="margin-top: 3px; margin-bottom: 10px;">
+
+        
+        <label class='sheet-character-attributes'>Career #2</label>
+        <input type="text" name='attr_Career2Name' class='sheet-input-long' value=""><br/>
+         <label class='sheet-character-attributes'><u><i>Roll</i></u></label>
+        <b>1D</b> <input type="number" name='attr_Career2' class='sheet-input-short' value="0">
+        <label class='sheet-plus'>|</label>
+        <input type="number" name='attr_Career2Exh' class='sheet-input-short' value="0">
+        <input  type="hidden" name="attr_Career2ExhRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s Career #2 Roll}} {{Career #2= @{Career2Name}}} {{roll_value= [[1d@{Career2Exh}]]}}">
+        <button type='roll' value="@{Career2ExhRoll}" name='roll_Career2ExhRoll'></button><br/>
+        <hr align="left" width="70%" style="margin-top: 3px; margin-bottom: 10px;">
+        
+         <label class='sheet-character-attributes'>Career #3</label>
+        <input type="text" name='attr_Career3Name' class='sheet-input-long' value=""><br/>
+         <label class='sheet-character-attributes'><u><i>Roll</i></u></label>
+        <b>1D</b> <input type="number" name='attr_Career3' class='sheet-input-short' value="0">
+        <label class='sheet-plus'>|</label>
+        <input type="number" name='attr_Career3Exh' class='sheet-input-short' value="0">
+        <input  type="hidden" name="attr_Career3ExhRoll" value="&{template:generic_roll} {{roll_name= @{Name}'s Career #3 Roll}} {{Career #3= @{Career3Name}}} {{roll_value= [[1d@{Career3Exh}]]}}">
+        <button type='roll' value="@{Career3ExhRoll}" name='roll_Career3ExhRoll'></button><br/>
+        <hr align="left" width="70%" style="margin-top: 3px; margin-bottom: 10px;">
+        
+        <br/>
+        </div>
+
+      
+
+    </div>
+  </div>
+</div>
+ 
+  <div class="sheet-section-header">Motvations and Methods</div>
+  <input type="checkbox" class="sheet-section-show-hide" name="attr_HideCharacterDisplay"/><span></span><br/>
+  <div class="sheet-section-body">
+    <div class='sheet-2colrow'>
+     
+      <div class='sheet-col'>
+        <h3 style="margin-bottom: 10px;text-align: center;"><i>Motivations</i></h3>
+        <h4 style="margin-bottom: 10px;text-align: center;">Base | Exhausted </h4>
+
+        <label class='sheet-skill-name'>For Honor...</label>
+        <b>1D</b> <input type="number" name='attr_PrimaryAttr1' class='sheet-input-short' value="0">
+        <label class='sheet-plus'>|</label>
+        <input type="number" name='attr_PrimaryAttr1Mod' class='sheet-input-short' value="0">
+        <input  type="hidden" name="attr_PrimaryAttr1Roll" value="&{template:generic_roll} {{roll_name= @{Name}'s For Honor... Roll}} {{skill= For Honor...}} {{roll_value= [[1d@{PrimaryAttr1Mod}]]}}">
+        <button type='roll' value="@{PrimaryAttr1Roll}" name='roll_PrimaryAttr1'></button><br/>
+        <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+        <label class='sheet-skill-name'>For Love...</label>
+        <b>1D</b> <input type="number" name='attr_PrimaryAttr2' class='sheet-input-short' value="0">
+        <label class='sheet-plus'>|</label>
+        <input type="number" name='attr_PrimaryAttr2Mod' class='sheet-input-short' value="0">
+        <input  type="hidden" name="attr_PrimaryAttr2Roll" value="&{template:generic_roll} {{roll_name= @{Name}'s For Love... Roll}} {{skill= For Love...}} {{roll_value= [[1d@{PrimaryAttr2Mod}]]}}">
+        <button type='roll' value="@{PrimaryAttr2Roll}" name='roll_PrimaryAttr2'></button><br/>
+        <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+        <label class='sheet-skill-name'>For Self...</label>
+        <b>1D</b> <input type="number" name='attr_PrimaryAttr3' class='sheet-input-short' value="0">
+        <label class='sheet-plus'>|</label>
+        <input type="number" name='attr_PrimaryAttr3Mod' class='sheet-input-short' value="0">
+        <input  type="hidden" name="attr_PrimaryAttr3Roll" value="&{template:generic_roll} {{roll_name= @{Name}'s For Self... Roll}} {{skill= For Self...}} {{roll_value= [[1d@{PrimaryAttr3Mod}]]}}">
+        <button type='roll' value="@{PrimaryAttr3Roll}" name='roll_PrimaryAttr3'></button>
+        <hr style="margin-top: 3px; margin-bottom: 10px;">
+        <br/>
+        </div>
+
+        <div class='sheet-col'>
+            
+        <h3 style="margin-bottom: 10px;text-align: center;"><i>Methods</i></h3>
+        <h4 style="margin-bottom: 10px;text-align: center;">Base | Exhausted </h4>
+
+        <label class='sheet-skill-name'>...with Cunning</label>
+        <b>1D</b> <input type="number" name='attr_PrimaryAttr4' class='sheet-input-short' value="0">
+        <label class='sheet-plus'>|</label>
+        <input type="number" name='attr_PrimaryAttr4Mod' class='sheet-input-short' value="0">
+        <input  type="hidden" name="attr_PrimaryAttr4Roll" value="&{template:generic_roll} {{roll_name= @{Name}'s ...With Cunning Roll}} {{skill= ...With Cunning}} {{roll_value= [[1d@{PrimaryAttr4Mod}]]}}">
+        <button type='roll' value="@{PrimaryAttr4Roll}" name='roll_PrimaryAttr4'></button><br/>
+        <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+        <label class='sheet-skill-name'>...with Force</label>
+        <b>1D</b> <input type="number" name='attr_PrimaryAttr5' class='sheet-input-short' value="0">
+        <label class='sheet-plus'>|</label>
+        <input type="number" name='attr_PrimaryAttr5Mod' class='sheet-input-short' value="0">
+        <input  type="hidden" name="attr_PrimaryAttr5Roll" value="&{template:generic_roll} {{roll_name= @{Name}'s ...With Force Roll}} {{skill= ...With Force}} {{roll_value= [[1d@{PrimaryAttr5Mod}]]}}">
+        <button type='roll' value="@{PrimaryAttr5Roll}" name='roll_PrimaryAttr5'></button><br/>
+        <hr style="margin-top: 3px; margin-bottom: 10px;">
+
+        <label class='sheet-skill-name'>...with Grace</label>
+        <b>1D</b> <input type="number" name='attr_PrimaryAttr6' class='sheet-input-short' value="0">
+        <label class='sheet-plus'>|</label>
+        <input type="number" name='attr_PrimaryAttr6Mod' class='sheet-input-short' value="0">
+        <input  type="hidden" name="attr_PrimaryAttr6Roll" value="&{template:generic_roll} {{roll_name= @{Name}'s ...With Grace Roll}} {{skill= ...With Grace}} {{roll_value= [[1d@{PrimaryAttr6Mod}]]}}">
+        <button type='roll' value="@{PrimaryAttr6Roll}" name='roll_PrimaryAttr6'></button>
+        <br/>
+      </div>
+
+      
+
+    </div>
+  </div>
+</div>
+
+<div>
+  <div class="sheet-section-header">Swashbuckling</div>
+  <input type="checkbox" class="sheet-section-show-hide" name="attr_HideSkillsDisplay"/><span></span><br/>
+  <div class="sheet-section-body">
+    <div class='sheet-2colrow'>
+      <div class='sheet-col'>
+        <h3 style="margin-bottom: 10px;text-align: center;">Other Traits</h3>
+
+                <label class='sheet-skill-name'>Speed</label>
+        <input type="number" name='attr_Speed' class='sheet-input-short' value="0">
+        <hr align="left" width="70%" style="margin-top: 3px; margin-bottom: 10px;">
+        
+        <label class='sheet-skill-name'>Drama Points</label>
+        <input type="number" name='attr_Drama' class='sheet-input-short' value="0">
+        <hr align="left" width="70%" style="margin-top: 3px; margin-bottom: 10px;">
+        
+        <label class='sheet-skill-name'>Windfall</label>
+        <input type="number" name='attr_Windfall' class='sheet-input-short' value="0">
+        <hr align="left" width="70%" style="margin-top: 3px; margin-bottom: 10px;">
+        
+          <label class='sheet-skill-name'>Strain</label>
+        <input type="number" name='attr_Strain' class='sheet-input-short' value="0">
+        <hr align="left" width="70%" style="margin-top: 3px; margin-bottom: 10px;">
+        
+        <br>
+        </div>
+
+      <div class='sheet-col'>
+        <h3 style="margin-bottom: 10px;text-align: center;">Current Round Combat Tracker</h3>
+        <input type="hidden" name="attr_skills_section2" value="&{template:generic_roll} {{roll_name= @{Name}'s skill check }} ?{Dice Pool|Skill7, {{skill= Skill7&amp;#125;&amp;#125; {{roll_value= [[ [[@{Skill7}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{Skill7Mod} ]]&amp;#125;&amp;#125;|Skill8, {{skill= Skill8&amp;#125;&amp;#125; {{roll_value= [[ [[@{Skill8}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{Skill8Mod} ]]&amp;#125;&amp;#125;|Skill9, {{skill= Skill9&amp;#125;&amp;#125; {{roll_value= [[ [[@{Skill9}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{Skill9Mod} ]]&amp;#125;&amp;#125;|Skill10, {{skill= Skill10&amp;#125;&amp;#125; {{roll_value= [[ [[@{Skill10}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{Skill10Mod} ]]&amp;#125;&amp;#125;|Skill11, {{skill= Skill11&amp;#125;&amp;#125; {{roll_value= [[ [[@{Skill11}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{Skill11Mod} ]]&amp;#125;&amp;#125;|Skill12, {{skill= Skill12&amp;#125;&amp;#125; {{roll_value= [[ [[@{Skill12}-?{Penalty?&amp;#124;0&amp;#124;1&amp;#124;2&amp;#124;3&amp;#124;4&amp;#124;5&amp;#125;]]d6+@{Skill12Mod} ]]&amp;#125;&amp;#125;}"/>
+
+        <label class='sheet-skill-name'>Strike Die</label>
+        <input type="number" name='attr_Strike' class='sheet-input-short' value="0">
+        <hr align="left" width="70%" style="margin-top: 3px; margin-bottom: 10px;">
+
+        <label class='sheet-skill-name'>Stunt Die</label>
+        <input type="number" name='attr_Stunt' class='sheet-input-short' value="0">
+        <hr align="left" width="70%" style="margin-top: 3px; margin-bottom: 10px;">
+
+        <label class='sheet-skill-name'>Parry Die</label>
+        <input type="number" name='attr_Parry' class='sheet-input-short' value="0">
+        <hr align="left" width="70%" style="margin-top: 3px; margin-bottom: 10px;">
+
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+<div>
+  <div class="sheet-section-header">Conditions</div>
+  <input type="checkbox" class="sheet-section-show-hide" name="attr_HideConditionsDisplay"/><span></span><br/>
+  <div class="sheet-section-body">
+    <div class='sheet-2colrow'>
+      <div class='sheet-col'>
+
+
+    <b><input type="checkbox" name="Exhausted" value="Yes"> Exhausted<br></b>
+    <hr align="left" width="70%" style="margin-top: 3px; margin-bottom: 10px;">
+    
+    
+    <b><input type="checkbox" name="Injured" value="Yes"> Injured<br></b>
+    <hr align="left" width="70%" style="margin-top: 3px; margin-bottom: 10px;">
+    
+    
+    <b><input type="checkbox" name="In Love" value="Yes"> In Love<br></b>
+    <hr align="left" width="70%" style="margin-top: 3px; margin-bottom: 10px;">
+    
+     <b><input type="checkbox" name="Melancholy" value="Yes"> Melancholy<br></b>
+    <hr align="left" width="70%" style="margin-top: 3px; margin-bottom: 10px;">
+    
+</div>
+
+<div class='sheet-col'>
+    
+ <b><input type="checkbox" name="Presumed Dead" value="Yes"> Presumed Dead<br></b>
+    <hr align="left" width="70%" style="margin-top: 3px; margin-bottom: 10px;">
+    
+    
+    <b><input type="checkbox" name="Trapped" value="Yes"> Trapped<br></b>
+    <hr align="left" width="70%" style="margin-top: 3px; margin-bottom: 10px;">
+    
+    
+    <b><input type="checkbox" name="Vengeful" value="Yes"> Vengeful<br></b>
+    <hr align="left" width="70%" style="margin-top: 3px; margin-bottom: 10px;">
+    
+</div>
+  </div>
+  </div>
+  </div>
+
+<div>
+  <div class="sheet-section-header">Talents</div>
+  <input type="checkbox" class="sheet-section-show-hide" name="attr_HideTalentsDisplay"/><span></span><br/>
+  <div class="sheet-section-body">
+    <div class='sheet-row'>
+      
+                 
+          <fieldset class="repeating_talents">
+          <label class='sheet-character-attributes'>Talent</label>
+          <input type="text" name="attr_TalentName"  class='sheet-input-long'/> 
+          <br  style="margin-bottom: 10px;"/>
+          <textarea name="attr_Backgroundtalent" class="misc"></textarea>
+          <hr style="margin-top: 3px; margin-bottom: 10px;">
+        </fieldset>
+      </div>
+ </div>
+
+
+
+
+<div>
+ <div class="sheet-section-header">Equipment</div>
+  <input type="checkbox" class="sheet-section-show-hide" name="attr_HideEquipmentDisplay"/><span></span><br/>
+  <div class="sheet-section-body">
+    <div class='sheet-row'>
+      
+                 
+          <fieldset class="repeating_equip">
+          <label class='sheet-character-attributes'>Gear</label>
+          <input type="text" name="attr_equipName"  class='sheet-input-long'/> 
+          <br  style="margin-bottom: 10px;"/>
+          <textarea name="attr_Backgroundequip" class="misc"></textarea>
+          <hr style="margin-top: 3px; margin-bottom: 10px;">
+        </fieldset>
+      </div>
+</div>
+
+
+<div>
+  <div class="sheet-section-header">MISCELLANEOUS</div>
+  <input type="checkbox" class="sheet-section-show-hide" name="attr_HideMiscDisplay"/><span></span><br/>
+  <div class="sheet-section-body">
+    <div class='sheet-3colrow'>
+      <div class='sheet-col'>
+        <h3 style="margin-bottom: 10px;text-align: center;">Background & Personality</h3>
+        <textarea name="attr_Background" class="misc"></textarea>
+      </div>
+
+      <div class='sheet-col'>
+        <h3 style="margin-bottom: 10px;text-align: center;">Other Equipment</h3>
+        <textarea name="attr_OtherEquipment"  class="misc"></textarea>
+      </div>
+
+      <div class='sheet-col'>
+        <h3 style="margin-bottom: 10px;text-align: center;">Notes</h3>
+        <textarea name="attr_CharacterAdvancementNotes"  class="misc"></textarea>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--ROLL TEMPLATES-->
+<div class="rolltemplates">
+  <rolltemplate class="sheet-rolltemplate-generic_roll">
+    <table>
+      <tr>
+        <th>
+          {{#roll_name}}
+            {{roll_name}}
+          {{/roll_name}}
+        </th>
+      </tr>
+      {{#skill}}
+        <tr>
+            <td class="tcat">{{skill}} Skill</td>
+        </tr>
+      {{/skill}}
+      {{#vehicle_action}}
+        <tr>
+            <td class="tcat">Action: {{vehicle_action}}</td>
+        </tr>
+      {{/vehicle_action}}
+      {{#weapon_name}}
+        <tr>
+            <td class="tcat">Weapon: {{weapon_name}}</td>
+        </tr>
+      {{/weapon_name}}
+      {{#roll_value}}
+        <tr>
+            <td class="tcat">Rolled: {{roll_value}}</td>
+        </tr>
+      {{/roll_value}}
+      {{#weapon_range}}
+        <tr>
+            <td class="tcat">Range: {{weapon_range}}</td>
+        </tr>
+      {{/weapon_range}}
+      {{#damage}}
+        <tr>
+            <td class="tcat">Damage: {{damage}}</td>
+        </tr>
+      {{/damage}}
+    </table>
+  </rolltemplate>
+</div>
